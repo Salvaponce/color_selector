@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import { BsPalette } from "react-icons/bs";
+import CircleForm from './components/CircleForm';
+import { useState } from 'react';
+import CircleGroupList from './components/CircleGroupList';
 
 function App() {
+ 
+  const [groups, setGroups] = useState([]);  
+
+  const submitHandle = group => {
+    if(group.name.trim()){
+      group.name = group.name.trim();
+      const actGroup = [group, ...groups];
+      setGroups(actGroup);
+      
+      localStorage.setItem(group.id, JSON.stringify(group));   
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='logo-contenedor'>
+        <h1 className="title"><BsPalette /> Color palette generator</h1>
+      </div>
+      <div className='form-container'>
+        <CircleForm onSubmit={submitHandle}/>
+      </div>
+      <div className='list-container'>
+        
+        <h3 className='second-title'>Saved</h3>
+          <CircleGroupList />      
+          
+      </div>
     </div>
   );
 }
