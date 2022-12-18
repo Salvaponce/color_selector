@@ -1,4 +1,13 @@
 .not-pointer{
-    pointer-events: none;
-    margin: 50px;
+    pointer-events: none;    
+    align-items: center;
+    justify-content: center; 
+}
+
+.circleGroupContainer{    
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: center; 
+    margin-right: 50px;
 }
