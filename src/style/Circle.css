@@ -11,6 +11,13 @@
   border-radius: 50%;
 }
 
+.circle-container{
+  display: inline-block;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .picker-container{
   position: fixed;
 }

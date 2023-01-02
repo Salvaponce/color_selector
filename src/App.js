@@ -24,7 +24,9 @@ function App() {
         <h1 className="title"><BsPalette /> Color palette generator</h1>
       </div>
       <div className='form-container'>
+        
         <CircleForm onSubmit={submitHandle}/>
+        <h4>If you select more than one circle, the circle most to the left will be changed</h4>
       </div>
       <div className='list-container'>
         
